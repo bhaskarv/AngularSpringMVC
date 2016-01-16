@@ -1,0 +1,36 @@
+<html ng-app="empApp">
+<head>
+<title>Add Empployee</title>
+<script src="js/angular.js"></script>
+<script src="js/angular-resource.js"></script>
+<script src="js/employee.js"></script>
+<link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body ng-controller="Employee">
+	<form name="form" ng-submit="add()" class="form-horizontal" novalidate="novalidate">
+		<div class="form-group">
+			<label for="ename"> Name :</label> 
+			<input type="text"
+				ng-model="employee.name" class="form-control" id="ename"
+				placeholder="Enter name " required="required" >
+		</div>
+		<div class="form-group">
+			<label for="eid"> Employee ID :</label> 
+			<input type="text"
+				ng-model="employee.id" class="form-control" id="eid"
+				placeholder="Enter id " required="required">
+		</div>
+
+		<button class="btn btn-default">Add</button>
+	</form>
+	{{responseStatus}}
+	<h3>List of Employees</h3>
+	<div>
+		<ul>
+			<li ng-repeat='emp in list'>
+				<span>NAME : {{emp.name}}</span><p>ID : {{emp.id}}</p>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

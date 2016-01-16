@@ -1,0 +1,27 @@
+<html ng-app="phoneCatApp">
+<head>
+<title>Angular Phone List</title>
+<script src="js/angular.js"></script>
+<script src="js/phoneController.js"></script>
+<link rel="stylesheet" href="css/app.css">
+</head>
+
+<body ng-controller="PhoneListCtrl">
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-2">
+				Search : <input ng-model="query">
+			</div>
+
+			<div class="col-md-10">
+				<ul classs="phones"> 
+					<li ng-repeat="phone in phones | filter:query">
+					<span>{{phone.name}} </span>
+					<p>{{phone.snippet}}</p></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

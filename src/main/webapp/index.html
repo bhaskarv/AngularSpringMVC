@@ -1,0 +1,20 @@
+<html ng-app="hello-app">
+<head>
+	<title>Greet AngularJS</title>
+	<script src="js/angular.js"></script>
+	<script src="js/hello.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body ng-controller="helloController">
+	<div class="container-fluid">
+		<form novalidate="novalidate" class="simple-form">
+		<p>
+			<input type="text" ng-model="name" placeholder="Enter your name : " />
+			<input type="submit" value ="Greet" ng-click="greet()" />
+		</p>
+		</form>
+		<p>The ID is {{greeting.counter}}</p>
+		<p>The Message is {{greeting.message}}</p>
+	</div>
+</body>
+</html>
